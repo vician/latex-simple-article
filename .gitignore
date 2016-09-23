@@ -1,0 +1,9 @@
+*.ps
+*.pdf
+*.log
+*.aux
+*.out
+*.dvi
+*.bbl
+*.blg
+missfont.log
