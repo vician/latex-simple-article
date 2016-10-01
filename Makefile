@@ -1,19 +1,22 @@
-filename=tfjcu
+filename=$(shell find . -name "*.tex")
 
 tex="pdflatex"
 bibtex="bibtex"
 
 pdf:
-	${tex} ${filename}.tex
+	${tex} ${filename}
 
 all:
-	${tex} ${filename}.tex
+	${tex} ${filename}
 	${bibtex} ${filename}
-	${tex} ${filename}.tex
-	${tex} ${filename}.tex
+	${tex} ${filename}
+	${tex} ${filename}
 
 read:
-	xdg-open ${filename}.pdf
+	xdg-open *.pdf
+
+watch:
+	nohup xdg-open *.pdf &
 
 clean:
-		rm -f ${filename}.{ps,pdf,log,aux,out,dvi,bbl,blg} missfont.log
+		rm -f *.{ps,pdf,log,aux,out,dvi,bbl,blg} missfont.log
